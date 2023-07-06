@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use App\Models\Book;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -38,6 +39,7 @@ class BookController extends Controller
             'title' => 'Books',
             'header' => $header,
             'categories' => Category::all(),
+            'about' => About::latest()->get(),
             'books' => $books
         ])->with('i', ($request->input('page', 1) - 1) * $pagination);
     }
@@ -52,6 +54,7 @@ class BookController extends Controller
         return view('books.create',[
             'title' => 'Create New Databook',
             'categories' => Category::all(),
+            'about' => About::latest()->get()
         ]);
     }
 
@@ -99,7 +102,8 @@ class BookController extends Controller
         return view('books.edit',[
             'title' => 'Edit Databook',
             'categories' => Category::all(),
-            'book' => $book
+            'book' => $book,
+            'about' => About::latest()->get()
         ]);
     }
 

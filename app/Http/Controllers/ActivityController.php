@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use App\Models\Activity;
 use App\Models\ActivityThumbnail;
 use Illuminate\Http\Request;
@@ -22,7 +23,8 @@ class ActivityController extends Controller
 
         return view('activity.index', [
             'activities' => $activities,
-            'kategori' => $request->kategori
+            'kategori' => $request->kategori,
+            'about' => About::latest()->get()
         ]);
     }
 
@@ -34,7 +36,8 @@ class ActivityController extends Controller
     public function create(Request $request)
     {
         return view('activity.create', [
-            'kategori' => $request->kategori
+            'kategori' => $request->kategori,
+            'about' => About::latest()->get()
         ]);
     }
 
@@ -133,7 +136,8 @@ class ActivityController extends Controller
 
         return view('activity.edit', [
             'kategori' => $request->kategori,
-            'activity' => $activity
+            'activity' => $activity,
+            'about' => About::latest()->get()
         ]);
     }
 

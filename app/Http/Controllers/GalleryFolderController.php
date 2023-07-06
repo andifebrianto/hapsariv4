@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use App\Models\Gallery;
 use App\Models\GalleryFolder;
 use Illuminate\Http\Request;
@@ -17,7 +18,8 @@ class GalleryFolderController extends Controller
     {
         return view('folder',[
             'folders' => GalleryFolder::latest()->get(),
-            'galleries' => Gallery::all()
+            'galleries' => Gallery::all(),
+            'about' => About::latest()->get()
         ]);
     }
 

@@ -64,8 +64,8 @@
                                 <img src="{{ asset('imgs/hapsari.jpeg') }}" alt="">
                                 <h6>Rumah Seni Hapsari</h6>
                             </a> --}}
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae nobis fugit maxime
-                                deleniti minus optio accusamus, quam maiores explicabo sunt.</p>
+                            {{-- <p>{!! $about[0]->description !!}</p> --}}
+                            <p>{!! Str::limit($about[0]->description, $limit = 150) !!}</p>
                             <p class="mt-3">
                                 Copyright
                                 <script>
