@@ -12,6 +12,7 @@ use App\Http\Controllers\GalleryFolderController;
 use App\Http\Controllers\AboutThumbnailController;
 use App\Http\Controllers\GalleryThumbnailController;
 use App\Http\Controllers\ActivityThumbnailController;
+use App\Http\Controllers\FollowUsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +47,5 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::post('/library-thumbnail', [AboutThumbnailController::class, 'uploadCropLibrary'])->middleware('auth');
+
+Route::resource('/follow-us', FollowUsController::class)->middleware('auth');

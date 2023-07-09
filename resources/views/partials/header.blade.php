@@ -33,7 +33,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body d-flex justify-content-center">
-                <a href="" class="btn btn-primary">
+                <a href="/follow-us" class="btn btn-primary">
                     Edit follow us
                 </a>
             </div>

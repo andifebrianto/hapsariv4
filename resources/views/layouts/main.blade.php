@@ -96,20 +96,33 @@
                     </ul>
                     <ul class="list">
                         <li class="list-head">
-                            <h6 class="font-weight-bold">FOLLOW US</h6>
+                            <h6 class="font-weight-bold">FOLLOW US
+                                {{-- add and edit follow us --}}
+                                @auth
+                                    <a style="text-decoration: none; color:#fff;" href="/follow-us"><i class="ti-pencil-alt" data-bs-toggle="tooltip"
+                                            data-bs-placement="bottom" data-bs-title="Edit follow us"></i></a>
+
+                                @endauth
+                                {{-- add and edit follow us end --}}
+                            </h6>
                         </li>
                         <li class="list-body">
                             <div class="row">
-                                <div class="col">
+                                @foreach ($follows as $follow)
+                                    <a href="{{ $follow->link }}" class="link"><i class="{{ $follow->platform }}"></i>
+                                        {{ $follow->name }}</a>
+                                @endforeach
+                                {{-- <div class="col">
                                     <a href="" class="link"><i class="ti-facebook"></i> Facebook</a>
                                     <a href="" class="link"><i class="ti-twitter-alt"></i> Twitter</a>
-                                    <a href="https://rumahsenihapsari56.blogspot.com/" class="link"><i class="ti-rss"></i> Blog</a>
+                                    <a href="https://rumahsenihapsari56.blogspot.com/" class="link"><i
+                                            class="ti-rss"></i> Blog</a>
                                 </div>
                                 <div class="col">
                                     <a href="" class="link"><i class="ti-instagram"></i> Instagram</a>
                                     <a href="" class="link"><i class="ti-youtube"></i> Youtube</a>
 
-                                </div>
+                                </div> --}}
                             </div>
                         </li>
                         {{-- <div class="social-links col">

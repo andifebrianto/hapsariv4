@@ -6,6 +6,7 @@ use App\Models\About;
 use App\Models\AboutThumbnail;
 use App\Models\Activity;
 use App\Models\Category;
+use App\Models\FollowUs;
 use App\Models\Gallery;
 use App\Models\LibraryThumbnail;
 use Illuminate\Http\Request;
@@ -25,7 +26,8 @@ class HomeController extends Controller
             'galleries' => $randomGallery,
             'categories' => Category::all(),
             'articles' => $randomArticle,
-            'news' => $randomNews
+            'news' => $randomNews,
+            'follows' => FollowUs::all()
         ]);
     }
 }
