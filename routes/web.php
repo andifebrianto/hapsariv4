@@ -44,3 +44,5 @@ Route::post('activity-thumbnail', [ActivityThumbnailController::class, 'uploadCr
 
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::post('/library-thumbnail', [AboutThumbnailController::class, 'uploadCropLibrary'])->middleware('auth');

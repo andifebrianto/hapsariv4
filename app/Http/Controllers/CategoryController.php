@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\Category;
+use App\Models\LibraryThumbnail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -23,7 +24,8 @@ class CategoryController extends Controller
             'title' => 'Categories',
             'header' => $header,
             'categories' => Category::latest()->get(),
-            'about' => About::latest()->get()
+            'about' => About::latest()->get(),
+            'library_thumb' => LibraryThumbnail::latest()->get()
         ]);
     }
 

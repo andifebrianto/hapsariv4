@@ -7,6 +7,7 @@ use App\Models\AboutThumbnail;
 use App\Models\Activity;
 use App\Models\Category;
 use App\Models\Gallery;
+use App\Models\LibraryThumbnail;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -20,6 +21,7 @@ class HomeController extends Controller
         return view('home', [
             'about' => About::latest()->get(),
             'about_thumb' => AboutThumbnail::latest()->get(),
+            'library_thumb' => LibraryThumbnail::latest()->get(),
             'galleries' => $randomGallery,
             'categories' => Category::all(),
             'articles' => $randomArticle,

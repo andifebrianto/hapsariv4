@@ -16,7 +16,7 @@
                     @auth
                         <a href="#" class="btn btn-primary button-overlay" data-bs-toggle="modal"
                             data-bs-target="#pickImage"><i class="ti-pencil-alt" data-bs-toggle="tooltip"
-                            data-bs-placement="right" data-bs-title="Edit image"></i></a>
+                                data-bs-placement="right" data-bs-title="Edit image"></i></a>
 
                     @endauth
                     {{-- Edit picture about end --}}
@@ -32,7 +32,7 @@
                         @auth
                             <a style="text-decoration: none; color:#343a40;" href="#about" data-bs-toggle="modal"
                                 data-bs-target="#editAbout{{ $about[0]->id }}"><i class="ti-pencil-alt" data-bs-toggle="tooltip"
-                                data-bs-placement="bottom" data-bs-title="Edit description"></i></a>
+                                    data-bs-placement="bottom" data-bs-title="Edit description"></i></a>
 
                         @endauth
                     </h6>
@@ -185,16 +185,30 @@
         <section id="library">
             <div class="container text-center">
                 <div class="row align-items-center mb-3">
-                    <div class="col-md-5 col-lg-4">
+                    {{-- <div class="col-md-5 col-lg-4">
                         <img src="imgs/avatar-6.png" alt="" class="w-100 img-thumbnail mb-3"
                             style="border:5px solid; border-radius:0.5rem; border-color:black">
+                    </div> --}}
+
+                    <div class="col-md-5 col-lg-4 image-container ">
+                        <img src="library_thumbnails/{{ $library_thumb[0]->name }}" alt="about-us-image"
+                            class="w-100 img-thumbnail mb-3"
+                            style="border:5px solid; border-radius:0.5rem; border-color:black">
+                        {{-- Edit picture library --}}
+                        @auth
+                            <a href="/library#libraryThumbnail" class="btn btn-primary button-overlay"><i class="ti-pencil-alt" data-bs-toggle="tooltip"
+                                    data-bs-placement="right" data-bs-title="Edit image"></i></a>
+
+                        @endauth
+                        {{-- Edit picture library end --}}
                     </div>
+
                     <div class="col-md-7 col-lg-8">
                         <h6 class="section-title mb-3 ml-3 text-left">Library
                             @auth
                                 <a style="text-decoration: none; color:#343a40;" href="/library#categories"><i
-                                        class="ti-pencil-alt" data-bs-toggle="tooltip"
-                                        data-bs-placement="right" data-bs-title="Edit categories"></i></a>
+                                        class="ti-pencil-alt" data-bs-toggle="tooltip" data-bs-placement="right"
+                                        data-bs-title="Edit categories"></i></a>
                             @endauth
                         </h6>
                         @foreach ($categories as $category)

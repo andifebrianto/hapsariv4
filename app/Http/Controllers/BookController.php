@@ -20,10 +20,21 @@ class BookController extends Controller
         $pagination = 10;
         $keyword = $request->get('cari');
 
+        // if (request('kategori')) {
+        //     $book = Book::firstWhere('kategori', request('kategori'));
+        //     $header =$book->kategori;
+        // }
+
         if (request('kategori')) {
-            $book = Book::firstWhere('kategori', request('kategori'));
-            $header =$book->kategori;
+            $kategori = request('kategori');
+            $book = Book::firstWhere('kategori', $kategori);
+            if ($book) {
+                $header = $book->kategori;
+            } else {
+                $header = $request->kategori;
+            }
         }
+        
 
         $books = Book::latest()->filter(request(['cari', 'kategori']))
         ->paginate(10)->fragment('books')->appends($request->except('page'));
