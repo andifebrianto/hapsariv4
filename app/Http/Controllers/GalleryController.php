@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\FollowUs;
 use App\Models\Gallery;
 use App\Models\GalleryFolder;
 use App\Models\GalleryThumbnail;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -29,7 +31,9 @@ class GalleryController extends Controller
             'galleries' => $galleries,
             'nameFolder' => $nameFolder,
             'folders' => GalleryFolder::all(),
-            'about' => About::latest()->get()
+            'about' => About::latest()->get(),
+            'user' => User::first(),
+            'follows' => FollowUs::all()
             // 'title' => 'gallery'
         ]);
     }

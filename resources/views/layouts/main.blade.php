@@ -99,8 +99,9 @@
                             <h6 class="font-weight-bold">FOLLOW US
                                 {{-- add and edit follow us --}}
                                 @auth
-                                    <a style="text-decoration: none; color:#fff;" href="/follow-us"><i class="ti-pencil-alt" data-bs-toggle="tooltip"
-                                            data-bs-placement="bottom" data-bs-title="Edit follow us"></i></a>
+                                    <a style="text-decoration: none; color:#fff;" href="/follow-us"><i class="ti-pencil-alt"
+                                            data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                            data-bs-title="Edit follow us"></i></a>
 
                                 @endauth
                                 {{-- add and edit follow us end --}}
@@ -180,6 +181,19 @@
         });
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
+
+    {{-- show password --}}
+    <script>
+        $(document).ready(function() {
+            $('.form-checkbox').click(function() {
+                if ($(this).is(':checked')) {
+                    $('.form-password').attr('type', 'text');
+                } else {
+                    $('.form-password').attr('type', 'password');
+                }
+            });
+        });
     </script>
 </body>
 

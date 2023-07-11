@@ -3,7 +3,7 @@
 @section('container')
     @include('partials.navbar-home')
     @include('partials.header')
-
+    
     <!-- About Section -->
     <section id="about">
         <div class="container">
@@ -203,7 +203,7 @@
                         {{-- Edit picture library end --}}
                     </div>
 
-                    <div class="col-md-7 col-lg-8">
+                    <div class="col-md-7 col-lg-8 text-left">
                         <h6 class="section-title mb-3 ml-3 text-left">Library
                             @auth
                                 <a style="text-decoration: none; color:#343a40;" href="/library#categories"><i

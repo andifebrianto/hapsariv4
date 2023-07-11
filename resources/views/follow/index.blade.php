@@ -6,7 +6,7 @@
 
     <section id="follow-us">
         <div class="container text-center">
-            <h6 class="section-title text-center mb-6"><a href="/#footer" class="text-decoration-none text-dark">Home</a> /
+            <h6 class="section-title text-center mb-6"><a href="/" class="text-decoration-none text-dark">Home</a> /
                 Edit
                 Follow Us</h6>
             <a href="" class="btn btn-primary font-weight-bold mb-4" data-bs-toggle="modal"
@@ -81,6 +81,8 @@
                                                         </option>
                                                         <option value="ti-email"
                                                             {{ $follow->platform == 'ti-email' ? 'selected' : '' }}>Email</option>
+                                                        <option value="ti-tumblr-alt"
+                                                            {{ $follow->platform == 'ti-tumblr-alt' ? 'selected' : '' }}>Threads</option>
                                                     </select>
                                                 </div>
 
@@ -177,6 +179,7 @@
                                 <option value="ti-instagram">Instagram</option>
                                 <option value="ti-youtube">Youtube</option>
                                 <option value="ti-email">Email</option>
+                                <option value="ti-tumblr-alt">Threads</option>
                             </select>
                         </div>
 

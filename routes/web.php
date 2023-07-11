@@ -13,6 +13,7 @@ use App\Http\Controllers\AboutThumbnailController;
 use App\Http\Controllers\GalleryThumbnailController;
 use App\Http\Controllers\ActivityThumbnailController;
 use App\Http\Controllers\FollowUsController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,3 +50,5 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::post('/library-thumbnail', [AboutThumbnailController::class, 'uploadCropLibrary'])->middleware('auth');
 
 Route::resource('/follow-us', FollowUsController::class)->middleware('auth');
+
+Route::post('/profile-update', [UserController::class, 'update'])->middleware('auth');

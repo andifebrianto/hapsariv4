@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\FollowUs;
 use App\Models\Gallery;
 use App\Models\GalleryFolder;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class GalleryFolderController extends Controller
@@ -19,7 +21,9 @@ class GalleryFolderController extends Controller
         return view('folder',[
             'folders' => GalleryFolder::latest()->get(),
             'galleries' => Gallery::all(),
-            'about' => About::latest()->get()
+            'about' => About::latest()->get(),
+            'user' => User::first(),
+            'follows' => FollowUs::all()
         ]);
     }
 

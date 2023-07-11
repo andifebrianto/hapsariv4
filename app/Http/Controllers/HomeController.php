@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\FollowUs;
 use App\Models\Gallery;
 use App\Models\LibraryThumbnail;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -27,7 +28,8 @@ class HomeController extends Controller
             'categories' => Category::all(),
             'articles' => $randomArticle,
             'news' => $randomNews,
-            'follows' => FollowUs::all()
+            'follows' => FollowUs::all(),
+            'user' => User::first()
         ]);
     }
 }

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Activity;
 use App\Models\ActivityThumbnail;
+use App\Models\FollowUs;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -24,7 +26,9 @@ class ActivityController extends Controller
         return view('activity.index', [
             'activities' => $activities,
             'kategori' => $request->kategori,
-            'about' => About::latest()->get()
+            'about' => About::latest()->get(),
+            'user' => User::first(),
+            'follows' => FollowUs::all()
         ]);
     }
 
@@ -37,7 +41,9 @@ class ActivityController extends Controller
     {
         return view('activity.create', [
             'kategori' => $request->kategori,
-            'about' => About::latest()->get()
+            'about' => About::latest()->get(),
+            'user' => User::first(),
+            'follows' => FollowUs::all()
         ]);
     }
 
@@ -137,7 +143,9 @@ class ActivityController extends Controller
         return view('activity.edit', [
             'kategori' => $request->kategori,
             'activity' => $activity,
-            'about' => About::latest()->get()
+            'about' => About::latest()->get(),
+            'user' => User::first(),
+            'follows' => FollowUs::all()
         ]);
     }
 

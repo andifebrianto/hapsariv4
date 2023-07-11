@@ -37,9 +37,9 @@
                     <div class="col-sm-3">
                         <div class="img-wrapper">
                             {{-- <a href="" data-bs-toggle="modal" data-bs-target="#addActivity" --}}
-                            <a href="/activity/create?kategori=Article">
+                            <a href="/activity/create?kategori={{ $kategori }}">
                                 <img src="imgs/plus.png" alt="" width="100" data-bs-toggle="tooltip"
-                                    data-bs-placement="bottom" data-bs-title="Add Article" style="width: 50%; vertical-align:center;"></a>
+                                    data-bs-placement="bottom" data-bs-title="Add {{ $kategori }}" style="width: 50%; vertical-align:center;"></a>
                         </div>
                     </div>
                 @endauth
